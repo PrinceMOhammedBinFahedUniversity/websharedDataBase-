@@ -1,0 +1,16 @@
+Create Table Major(
+majorname varchar(30) primary key );
+
+
+
+CREATE TABLE Student (
+    Student_ID   number(9)     primary key,
+    FirstName    varchar(30)    not null,
+    LastName     varchar(30)     not null,
+    sex char(2),
+    Pw   varchar(8)    not null,
+    major    varchar(30)     not null);
+
+ALTER TABLE Student
+ADD FOREIGN KEY (major) REFERENCES major(majorname);
+ALTER TABLE Student  ADD CONSTRAINT SEXCHECK CHECK (SEX IN ('M','F'));
